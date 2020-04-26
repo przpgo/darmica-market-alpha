@@ -17,14 +17,14 @@ form:
     fr: Code de validation
     context: Can be used in many contexts such as phone or transaction validation.
   slider_helper:
-    en: Slide to adjust
+    en: Desliza para ajustar
     fr: Glisser pour modifier
     context: Helps user using slider to set values in forms.
   date_placeholder:
-    en: Date
+    en: Fecha
     fr: Date
   tags_label:
-    en: Tags
+    en: Etiquetas
     fr: Mots-clés
   search:
     placeholder:
@@ -32,11 +32,11 @@ form:
       fr: Rechercher
       context: Generic search placeholder (user or asset filter forms)
     query_placeholder:
-      en: You’re looking for…
+      en: Escribe lo que buscas...
       fr: "Que recherchez-vous\_?"
       context: More enticing than generic placeholder
     near_location_placeholder:
-      en: Near…
+      en: ¿Donde?
       fr: À proximité de…
     search_types_filter:
       en: Search type

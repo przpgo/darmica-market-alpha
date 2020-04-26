@@ -20,8 +20,28 @@ const locale = process.env.VUE_APP_DEFAULT_LANGUAGE || 'en'
 module.exports = {
   /* eslint-disable quotes */
   assetTypes: {
+    donating: {
+      name: '❤️ Donación',
+      timeBased: true,
+      infiniteStock: false,
+      timing: {
+        timeUnit: 'd',
+        minDuration: { d: 1 }
+      },
+      active: true
+    },
+    lending: {
+      name: '♻️ Préstamo',
+      timeBased: true,
+      infiniteStock: false,
+      timing: {
+        timeUnit: 'd',
+        minDuration: { d: 1 }
+      },
+      active: true
+    },
     renting: {
-      name: 'Renting',
+      name: '💰 Renta',
       timeBased: true,
       infiniteStock: false,
       timing: {
@@ -31,7 +51,7 @@ module.exports = {
       active: true
     },
     selling: {
-      name: 'Selling',
+      name: '🏷 Venta',
       timeBased: false,
       infiniteStock: false,
       active: true
@@ -39,11 +59,9 @@ module.exports = {
   },
   assets: {
     passiveHouse: {
-      name: 'Passive House ☀️',
-      description: `Rehabilitated to a cosy studio surrounded by nature.
-        Equipped with solar panels and saltwater batteries built to last 20 years.
-        10 minutes from Aix.
-        For sale, please get in touch.
+      name: 'Vendo mi Guitarra Eléctrica ☀️',
+      description: `
+        Vendo mi guitarra eléctrica stratocaster
       `,
       assetTypeId: 'assetTypes::selling',
       categoryId: 'categories::house',
@@ -70,12 +88,12 @@ module.exports = {
       }
     },
     charmingFlat: {
-      name: 'Flat with unique view',
-      description: 'Flat with wonderful vue on the city center and the sea. Perfect for your holidays.',
-      assetTypeId: 'assetTypes::renting',
+      name: 'Dono ayuda para máscaras felices',
+      description: 'Me encantaría apoyar esta noble causa',
+      assetTypeId: 'assetTypes::donating',
       categoryId: 'categories::flat',
       ownerId: 'users::user2',
-      price: 50,
+      price: 0,
       locations: [
         {
           latitude: 43.25,
@@ -97,7 +115,7 @@ module.exports = {
       }
     },
     cassisFlat: {
-      name: 'Flat with panoramic view',
+      name: '🚖 Presto mi espacio de estacionamiento por día',
       description: 'Beautiful fully furnished flat with an awesome panoramic view. Perfect for a couple who wants to enjoy a week in Cassis.',
       assetTypeId: 'assetTypes::renting',
       categoryId: 'categories::flat',
@@ -178,17 +196,17 @@ module.exports = {
       }
     },
     cabriesHouse: {
-      name: 'New house with a swimming pool',
-      description: 'Recent and spacious house, built in 2008 on a large wooded plot of 5500 M2 for 12 people, two or three families.',
-      assetTypeId: 'assetTypes::renting',
-      categoryId: 'categories::house',
+      name: 'Presto mi casa',
+      description: 'Presto mi casa unos días',
+      assetTypeId: 'assetTypes::lending',
+      categoryId: 'categories::accomodation',
       ownerId: 'users::user1',
       price: 115,
       locations: [
         {
           latitude: 43.444,
           longitude: 5.359,
-          shortDisplayName: 'Cabriès'
+          shortDisplayName: 'Presto Casa'
         }
       ],
       validated: true,
@@ -205,9 +223,9 @@ module.exports = {
       }
     },
     mimetVilla: {
-      name: 'Country house with pool and jacuzzi',
+      name: 'Presto Country house with pool and jacuzzi',
       description: 'Villa of architect, typical Provencal country house in the countryside, in the middle of tall pines and oaks. View that overlooks the landscape. Large private pool 12 x 6 meters, plus beach and pleasure garden of 4000 m².',
-      assetTypeId: 'assetTypes::renting',
+      assetTypeId: 'assetTypes::lending',
       categoryId: 'categories::house',
       ownerId: 'users::user2',
       price: 115,
@@ -234,7 +252,7 @@ module.exports = {
     cosyMarseille: {
       name: 'Cozy studio between Old Port and Notre-Dame-de-la-Garde',
       description: 'A quiet 35m² apartment in the heart of one of the most beautiful district of Marseille. The apartment is located 5 minutes walk from the Old Port Notre-Dame de la Garde. Ideal for a weekend, a week of vacation with its beautiful balcony.',
-      assetTypeId: 'assetTypes::renting',
+      assetTypeId: 'assetTypes::donating',
       categoryId: 'categories::flat',
       ownerId: 'users::user2',
       price: 45,
@@ -368,11 +386,47 @@ module.exports = {
     }
   },
   categories: {
-    house: {
-      name: 'House'
+    food: {
+      name: '🌮 Comida'
     },
-    flat: {
-      name: 'Flat'
+    water: {
+      name: '💧 Agua'
+    },
+    health: {
+      name: '👨‍ Salud'
+    },
+    clothes: {
+      name: '👕 Ropa'
+    },
+    accomodation: {
+      name: '🏚 Alojamiento'
+    },
+    security: {
+      name: '🚨 Seguridad'
+    },
+    art: {
+      name: '🎨 Arte'
+    },
+    community: {
+      name: '🌳 Comunidad'
+    },
+    home: {
+      name: '🛀 Casa & Electrodomésticos'
+    },
+    books: {
+      name: '📗 Libros'
+    },
+    education: {
+      name: '👩‍🏫 Educación'
+    },
+    spiritual: {
+      name: '🧘‍♀️ Meditación & Espiritualidad'
+    },
+    transport: {
+      name: '🚚 Transporte'
+    },
+    technology: {
+      name: '💻 Tecnología'
     }
   },
   config: {
@@ -385,27 +439,80 @@ module.exports = {
           // platformUrl: 'https://example.com,
           logoUrl: '',
           locale,
-          currency: 'EUR',
+          currency: 'MXN',
           assetTypes: {
-            'assetTypes::renting': {
-              customAttributes: [
-                'scenery',
-              ]
-            },
             'assetTypes::selling': {
               customAttributes: [
-                'passive',
-                'scenery',
+                'new',
+                'seminew',
+                'used',
+                'veryused',
+                'broken'
+              ]
+            },
+            'assetTypes::renting': {
+              customAttributes: [
+                'hourly',
+                'daily',
+                'weekly',
+                'monthly',
+                'yearly'
+              ]
+            },
+            'assetTypes::donating': {
+              customAttributes: [
+                'new',
+                'seminew',
+                'used',
+                'veryused',
+                'broken'
+              ]
+            },
+            'assetTypes::lending': {
+              customAttributes: [
+                'hourly',
+                'daily',
+                'weekly',
+                'monthly',
+                'yearly'
               ]
             }
           },
           searchOptions: {
             modes: {
               default: {
-                assetTypesIds: ['assetTypes::renting', 'assetTypes::selling'],
+                assetTypesIds: ['assetTypes::renting', 'assetTypes::selling', 'assetTypes::lending', 'assetTypes::renting'],
                 customAttributes: [
                   'passive',
                   'scenery'
+                ],
+                isActiveFor: [
+                  'public',
+                  'user'
+                ]
+              },
+              donating: {
+                assetTypesIds: ['assetTypes::donating'],
+                customAttributes: [
+                  'hourly',
+                  'daily',
+                  'weekly',
+                  'monthly',
+                  'yearly'
+                ],
+                isActiveFor: [
+                  'public',
+                  'user'
+                ]
+              },
+              lending: {
+                assetTypesIds: ['assetTypes::lending'],
+                customAttributes: [
+                  'new',
+                  'seminew',
+                  'used',
+                  'veryused',
+                  'broken'
                 ],
                 isActiveFor: [
                   'public',
@@ -415,7 +522,11 @@ module.exports = {
               renting: {
                 assetTypesIds: ['assetTypes::renting'],
                 customAttributes: [
-                  'scenery'
+                  'hourly',
+                  'daily',
+                  'weekly',
+                  'monthly',
+                  'yearly'
                 ],
                 isActiveFor: [
                   'public',
@@ -425,8 +536,11 @@ module.exports = {
               selling: {
                 assetTypesIds: ['assetTypes::selling'],
                 customAttributes: [
-                  'passive',
-                  'scenery'
+                  'new',
+                  'seminew',
+                  'used',
+                  'veryused',
+                  'broken'
                 ],
                 isActiveFor: [
                   'public',
@@ -457,27 +571,53 @@ module.exports = {
             ],
           },
 
-          assetsInUniqueCountry: 'fr',
+          assetsInUniqueCountry: 'mx',
           assetsInUniqueCountryActive: true,
           googleAnalyticsTrackingActive: true,
           googleAnalyticsTrackingId: 'UA-XXXXXX-1', // for development
 
-          twitterUsername: 'StelaceAPI',
+          twitterUsername: 'darmicacom',
           // facebookUrl: ''
         }
       }
     }
   },
   customAttributes: {
-    passive: {
-      name: 'passive',
+    // 'new',
+    //             'seminew',
+    //             'used',
+    //             'veryused',
+    //             'broken'
+    //             'hourly',
+    //             'dayli',
+    //             'weekly',
+    //             'monthly',
+    //             'yearly',
+    new: {
+      name: 'new',
       type: 'boolean',
       metadata: {
         instant: {
           i18n: {
             label: {
               entry: 'instant',
-              field: 'config.customAttributes.passive_label',
+              field: 'config.customAttributes.new_label',
+              default: 'Default Product'
+            }
+          }
+        }
+      }
+    },
+
+    used: {
+      name: 'used',
+      type: 'boolean',
+      metadata: {
+        instant: {
+          i18n: {
+            label: {
+              entry: 'instant',
+              field: 'config.customAttributes.used_label',
               default: 'Passive House' // in case translation is missing
               // Generally in the default language of the platform
             },
@@ -488,16 +628,124 @@ module.exports = {
         }
       }
     },
-    scenery: {
-      name: 'scenery',
+    veryused: {
+      name: 'veryused',
       type: 'boolean',
       metadata: {
         instant: {
           i18n: {
             label: {
               entry: 'instant',
-              field: 'config.customAttributes.scenery_label',
-              default: 'Breathtaking Scenery'
+              field: 'config.customAttributes.veryused_label',
+              default: 'Breathtaking veryused'
+            },
+            description: {}
+          },
+          materialIcon: 'insert_photo', // example of UI customization with metadata
+          priority: 20 // used to order custom attributes in UI
+        }
+      }
+    },
+    broken: {
+      name: 'broken',
+      type: 'boolean',
+      metadata: {
+        instant: {
+          i18n: {
+            label: {
+              entry: 'instant',
+              field: 'config.customAttributes.broken_label',
+              default: 'Breathtaking broken'
+            },
+            description: {}
+          },
+          materialIcon: 'insert_photo', // example of UI customization with metadata
+          priority: 20 // used to order custom attributes in UI
+        }
+      }
+    },
+    hourly: {
+      name: 'hourly',
+      type: 'boolean',
+      metadata: {
+        instant: {
+          i18n: {
+            label: {
+              entry: 'instant',
+              field: 'config.customAttributes.hourly_label',
+              default: 'Breathtaking hourly'
+            },
+            description: {}
+          },
+          materialIcon: 'insert_photo', // example of UI customization with metadata
+          priority: 20 // used to order custom attributes in UI
+        }
+      }
+    },
+    daily: {
+      name: 'daily',
+      type: 'boolean',
+      metadata: {
+        instant: {
+          i18n: {
+            label: {
+              entry: 'instant',
+              field: 'config.customAttributes.daily_label',
+              default: 'Breathtaking broken'
+            },
+            description: {}
+          },
+          materialIcon: 'insert_photo', // example of UI customization with metadata
+          priority: 20 // used to order custom attributes in UI
+        }
+      }
+    },
+    weekly: {
+      name: 'weekly',
+      type: 'boolean',
+      metadata: {
+        instant: {
+          i18n: {
+            label: {
+              entry: 'instant',
+              field: 'config.customAttributes.weekly_label',
+              default: 'Breathtaking weekly'
+            },
+            description: {}
+          },
+          materialIcon: 'insert_photo', // example of UI customization with metadata
+          priority: 20 // used to order custom attributes in UI
+        }
+      }
+    },
+    monthly: {
+      name: 'monthly',
+      type: 'boolean',
+      metadata: {
+        instant: {
+          i18n: {
+            label: {
+              entry: 'instant',
+              field: 'config.customAttributes.monthly_label',
+              default: 'Breathtaking monthly'
+            },
+            description: {}
+          },
+          materialIcon: 'insert_photo', // example of UI customization with metadata
+          priority: 20 // used to order custom attributes in UI
+        }
+      }
+    },
+    yearly: {
+      name: 'yearly',
+      type: 'boolean',
+      metadata: {
+        instant: {
+          i18n: {
+            label: {
+              entry: 'instant',
+              field: 'config.customAttributes.yearly_label',
+              default: 'Breathtaking yearly'
             },
             description: {}
           },

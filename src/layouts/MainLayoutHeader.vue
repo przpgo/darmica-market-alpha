@@ -434,7 +434,7 @@ export default {
         :loading="content.fetchingContentStatus"
         :rounded="style.roundedTheme"
         :label="$t({ id: 'navigation.new_listing' })"
-        :icon="icons.matAddBox"
+        :icon="icons.wifi"
         color="secondary"
         align="between"
         dense
