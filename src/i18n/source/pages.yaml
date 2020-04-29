@@ -11,7 +11,7 @@ pages:
       en: As shown in Web browser and search engine results such as Google.
       fr: Apparaît dans votre navigateur Web ainsi que dans les résultats des moteurs de recherche tels que Google.
     meta_description:
-      en: "Your community awaits you on {SERVICE_NAME}"
+      en: "Tu comunidad te espera en {SERVICE_NAME}"
       fr: "Rejoignez la communauté {SERVICE_NAME}"
       context: This is a very generic default that should be replaced by admin before platform is online.
     header:
@@ -25,7 +25,7 @@ pages:
       en: Try to describe your activity precisely to improve your SEO.
       fr: Essayez de décrire votre activité précisément pour améliorer votre référencement.
     subheader:
-      en: Your community
+      en: Red de cooperación ciudadana
       fr: Votre communauté
     subheader__EDITOR_LABEL:
       en: Subheader of your website
@@ -43,7 +43,7 @@ pages:
       en: Main content of your home page
       fr: Contenu principal de votre page d’accueil
     asset_gallery_header:
-      en: Available on {SERVICE_NAME}
+      en: Disponible en {SERVICE_NAME}
       fr: Disponible sur {SERVICE_NAME}
       context: Introducing some assets as sample on home page
     testimonials_header:
@@ -77,7 +77,7 @@ pages:
       en: Create your own listing in no time.
       fr: Créez votre propre annonce en quelques instants.
     header:
-      en: Create your new offer
+      en: Envía tu señal
       fr: Créez votre nouvelle annonce
     header__EDITOR_LABEL:
       en: Main header of your listing creation page
@@ -86,7 +86,7 @@ pages:
       en: It’s fast and free.
       fr: C’est simple et gratuit.
     form_header:
-      en: Everything starts with a good title
+      en: Por favor describe la señal que estás mandando
       fr: Tout commence par un bon titre
     publication_status:
       en: |
@@ -102,7 +102,7 @@ pages:
             other {}
         }
     picture_incentive:
-      en: Beautiful pictures make a difference…
+      en: Por favor sube fotos que describan tu señal
       fr: De belles images font la différence…
     picture_incentive__EDITOR_LABEL:
       en: "Incentive to upload attractive images"

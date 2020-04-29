@@ -81,10 +81,10 @@ form:
       fr: Information manquante
       context: Can be showed when some parts of form has not been filled in.
     missing_title:
-      en: Required title
+      en: Se requiere un título
       fr: Titre requis
     missing_price:
-      en: Missing price
+      en: Falta el precio
       fr: Prix manquant
     missing_description:
       en: Required description

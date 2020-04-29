@@ -2,7 +2,7 @@ form:
   search:
     modes:
       default:
-        en: All
+        en: Todos
         fr: Tous
         context: Default search mode, generally “offers” as opposed to “requests” or submissions
       renting:

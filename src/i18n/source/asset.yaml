@@ -4,7 +4,7 @@ asset:
     fr: Titre
     context: Asset name used as title of asset page
   asset_type_label:
-    en: Asset type
+    en: Tipo de Señal
     fr: Type de ressource
   available_in_places:
     en: "Available in {places}"

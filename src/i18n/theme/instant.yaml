@@ -2,6 +2,18 @@ instant:
   config:
     customAttributes:
       # Goods marketplace
+      deliveryMethodLabel:
+        en: Método de envío
+        fr: Delivery Method
+        
+      productState:
+        en: ¿En que estado se encuentra?
+        fr: Product State
+
+      signalType:
+        en: Tipo de señal que envías
+        fr: Signal Type
+
       reference_label:
         en: Reference
         fr: Référence

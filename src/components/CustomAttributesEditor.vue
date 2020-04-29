@@ -92,6 +92,7 @@ export default {
       class="text-left"
       link
     >
+      <h1>Hola</h1>
       <QItem
         v-for="customAttribute in booleanCustomAttributes"
         :key="customAttribute.id"

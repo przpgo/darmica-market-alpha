@@ -39,7 +39,7 @@ export default {
       nameMaxLength: 70,
       description: '',
       descriptionMaxLength: 2000,
-      price: null,
+      price: 0,
       startDate: '',
       endDate: '',
       quantity: 1,
@@ -82,6 +82,10 @@ export default {
       } else {
         return this.common.assetTypesById[this.asset.asset.assetTypeId] || null
       }
+    },
+    donatingOrLending () {
+      return !(this.selectedAssetType.name.includes('❤') ||
+      this.selectedAssetType.name.includes('♻️'))
     },
     editableCustomAttributeNames () {
       if (!this.selectedAssetType) return []
@@ -139,7 +143,12 @@ export default {
       }
 
       const validCategory = this.selectedCategory && this.selectedCategory.name
-      if ((!this.categoryRequired || validCategory) && !isNaN(parseInt(this.price))) {
+      if ((
+        !this.categoryRequired ||
+        validCategory) &&
+        (!isNaN(parseInt(this.price)) ||
+        (!this.selectedAssetType.name.includes('❤️') ||
+        !this.selectedAssetType.name.includes('♻️')))) {
         steps[3] = true
       }
 
@@ -401,22 +410,6 @@ export default {
           <div class="text-h5">
             {{ $t({ id: 'pages.new_asset.form_header' }) }}
           </div>
-          <div class="row justify-center">
-            <QInput
-              v-model="name"
-              class="row-input"
-              :label="$t({ id: 'asset.name_label' })"
-              :counter="name.length > nameMaxLength / 2"
-              :maxlength="nameMaxLength"
-              :rules="[
-                name => !!name ||
-                  $t({ id: 'form.error.missing_title' })
-              ]"
-              debounce="500"
-              autogrow
-              required
-            />
-          </div>
           <div
             v-if="assetTypeRequired && activeAssetTypes.length > 1"
             class="q-mt-md row justify-center"
@@ -434,6 +427,22 @@ export default {
               :readonly="isAssetTypeReadonly"
               bottom-slots
               @change="selectAssetType"
+            />
+          </div>
+          <div class="row justify-center">
+            <QInput
+              v-model="name"
+              class="row-input"
+              :label="$t({ id: 'asset.name_label' })"
+              :counter="name.length > nameMaxLength / 2"
+              :maxlength="nameMaxLength"
+              :rules="[
+                name => !!name ||
+                  $t({ id: 'form.error.missing_title' })
+              ]"
+              debounce="500"
+              autogrow
+              required
             />
           </div>
         </div>
@@ -458,12 +467,12 @@ export default {
                   @change="selectCategory"
                 />
               </div>
-              <div :style="showCategory ? 'flex: 1 2 auto;' : ''">
+              <div v-if="donatingOrLending" :style="showCategory ? 'flex: 1 2 auto;' : ''">
                 <AppInputNumber
                   v-model="price"
                   :label="priceLabel"
                   :rules="[
-                    price => Number.isFinite(price) ||
+                    price => (price) ||
                       $t({ id: 'form.error.missing_price' })
                   ]"
                   required
