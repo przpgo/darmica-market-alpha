@@ -1,38 +1,38 @@
 navigation:
   home:
-    en: Home
+    en: Casa
     fr: Accueil
   faq:
-    en: FAQ
+    en: Preguntas Frecuentes
     fr: "Comment ça marche\_?"
   new_listing:
-    en: Send your signal
+    en: Envía tu señal
     fr: Publiez votre annonce
   new_listing__EDITOR_LABEL:
-    en: New listing link
+    en: link a Nueva Señal
     fr: Lien de publication d’annonce
   contact_us:
-    en: Contact us
+    en: Contáctanos
     fr: Contactez-nous
   about_us:
-    en: About us
+    en: Nosotros
     fr: Qui sommes-nous ?
   terms:
-    en: Terms
+    en: Términos
     fr: Conditions Générales
   search:
-    en: Search
+    en: Buscar
     fr: Rechercher
     context: Action required to find assets
   back_top_of_page:
-    en: Back to top
+    en: Arriba
     fr: Retour en haut de page
   back:
-    en: Back
+    en: Atrás
     fr: Retour
     context: Back to previous view button
   close:
-    en: Close
+    en: Cerrar
     fr: Fermer
     context: Close current in-app window or context
   menu:
@@ -40,21 +40,21 @@ navigation:
     fr: Menu
     context: Navigation menu label
   account:
-    en: Account
+    en: Cuenta
     fr: Mon compte
   invite:
-    en: Invite
+    en: Invitar
     fr: Parrainer
   inbox:
-    en: Inbox
+    en: Bandeja de Entrada
     fr: Boîte de réception
   profile:
-    en: Profile
+    en: Perfil
     fr: Profil
     context: Can point to public profile or dedicated profile edition page as well.
   public_profile:
-    en: Public profile
+    en: Perfil público
     fr: Profil public
   my_assets:
-    en: My listings
+    en: Mis señales
     fr: Mes annonces

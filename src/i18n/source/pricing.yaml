@@ -3,7 +3,7 @@ pricing:
     en: "{price, number, currency}"
     fr: "{price, number, currency}"
   price_label:
-    en: Price
+    en: Precio en MXN
     fr: Prix
   asking_price_label:
     en: Asking price
@@ -66,11 +66,11 @@ pricing:
     en: |
       {price, select, undefined {Price} other {{price, number, currency}} }
       {timeUnit, select,
-        M{per month}
-        d{per day}
-        n{per night}
-        h{per hour}
-        m{per minute}
+        M{por mes}
+        d{por día}
+        n{por noche}
+        h{por hora}
+        m{por minuto}
         other{}
       }
     fr: |
@@ -88,11 +88,11 @@ pricing:
       {price, select, undefined {Price} other {{price, number, currency}} }
       (excl. tax)
       {timeUnit, select,
-        M{per month}
-        d{per day}
-        n{per night}
-        h{per hour}
-        m{per minute}
+        M{por mes}
+        d{por día}
+        n{por noche}
+        h{por hora}
+        m{por minuto}
         other{}
       }
     fr: |

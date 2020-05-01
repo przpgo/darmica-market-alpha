@@ -1,15 +1,30 @@
 form:
   search:
     modes:
+      donating:
+        en: 💚 Donaciones
       default:
-        en: Todos
+        en: 🔆 Apagar Filtro
         fr: Tous
         context: Default search mode, generally “offers” as opposed to “requests” or submissions
       renting:
-        en: Renting
+        en: 💵 Renta
         fr: Location
         context: Renting search mode
       selling:
-        en: Selling
+        en: 🏷 Venta
         fr: Vente
         context: Selling search mode
+      expert:
+        en: 🎖 Expertos
+
+      lending:
+        en: ♻️ Préstamos
+
+
+      
+      business:
+        en: 🗳 Negocios
+
+      transport:
+        en: 🚕 Transporte

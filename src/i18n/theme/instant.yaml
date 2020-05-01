@@ -1,18 +1,101 @@
 instant:
   config:
     customAttributes:
-      # Goods marketplace
-      deliveryMethodLabel:
-        en: Método de envío
-        fr: Delivery Method
-        
-      productState:
+      productState_label:
         en: ¿En que estado se encuentra?
         fr: Product State
 
-      signalType:
+      signalForm_label:
         en: Tipo de señal que envías
         fr: Signal Type
+
+      signalDirection_label:
+        en: ¿Ofreces o Solicitas?
+        es: ¿Ofreces o Solicitas?
+        
+      actions_label:
+        en: Acciones
+      
+      deliveryMethod_label:
+        en: Método de Entrega
+      
+      abilities_label:
+        en: Habilidades
+      
+      certificates_label:
+        en: Certificaciones
+
+      professionalLevel_label:
+        en: Nivel Profesional
+      
+      professionalDegree_label:
+        en: Título Profesional
+
+      college_label:
+        en: Nombre de tu Universidad
+      
+      driverName_label:
+        en: Nombre del Chofer
+
+      driverLicenseId_label:
+        en: Licencia del Chofer
+
+      transportType_label:
+        en: Tipo de transporte
+
+      highschool_label:
+        en: Preparatoria a la que acudiste
+
+      primaryschool_label:
+        en: Primaria a la que fuiste
+      
+      linkedin_label:
+        en: URL de LinkedIn
+
+      facebook_label:
+        en: URL de Facebook
+
+      website_label:
+        en: Tu sitio web
+        
+      instagram_label:
+        en: URL de Instagram
+
+      twitter_label:
+        en: URL de Twitter
+
+      youtube_label:
+        en: URL de youtube
+
+      plateId_label:
+        en: Número de Placas
+
+      businessName_label:
+        en: Razón Social
+
+      taxId_label:
+        en: RFC
+
+      mission_label:
+        en: Misión
+
+      vision_label:
+        en: Visión
+
+      values_label:
+        en: Valores
+
+      businessSize_label:
+        en: Tamaño del Negocio
+      
+      industries_label:
+        en: Industrias
+
+      products_label:
+        en: Productos
+
+      services_label:
+        en: Servicios
 
       reference_label:
         en: Reference

@@ -1,6 +1,6 @@
 asset:
   name_label:
-    en: Title
+    en: Título
     fr: Titre
     context: Asset name used as title of asset page
   asset_type_label:
@@ -11,7 +11,7 @@ asset:
     fr: "Disponible à {places}"
     context: Introduce places where asset is available.
   category_label:
-    en: Category
+    en: Categoría
     fr: Catégorie
   subcategory_label:
     en: Subcategory

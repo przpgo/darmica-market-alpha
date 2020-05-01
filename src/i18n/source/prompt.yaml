@@ -1,139 +1,139 @@
 # Generic prompts
 prompt:
   continue_button:
-    en: Continue
+    en: Continuar
     fr: Continuer
     context: Used in any context where a multi-step process is pending user action.
   confirm_button:
-    en: Confirm
+    en: Confirmar
     fr: Confirmer
     context: Prompt user to complete ongoing process or confirm input.
   save_button:
-    en: Save
+    en: Guardar
     fr: Enregistrer
     context: General purpose button to save new content or setting.
   cancel_button:
-    en: Cancel
+    en: Cancelar
     fr: Annuler
   reset_button:
-    en: Reset
+    en: Resetear
     fr: Réinitialiser
   archive_button:
-    en: Archive
+    en: Archivar
     fr: Archiver
   delete_button:
-    en: Delete
+    en: Borrar
     fr: Supprimer
   send_button:
-    en: Send
+    en: Enviar
     fr: Envoyer
   later_button:
-    en: Later
+    en: Más tarde
     fr: Plus tard
     context: User can postpone an action with this button.
   confirm_delete:
-    en: Do you confirm the deletion?
+    en: ¿En verdad deseas borrar?
     fr: Confirmez-vous la suppression ?
   binary_yes:
-    en: "Yes"
+    en: "Si"
     fr: "Oui"
   binary_no:
     en: "No"
     fr: "Non"
   binary_or_separator:
-    en: Or
+    en: O
     fr: Ou
     context: Introduces an alternative such as another login option.
   select:
-    en: Select
+    en: Seleccionar
     fr: Sélectionner
   browse:
-    en: Browse
+    en: Buscar
     fr: Parcourir
     context: Applies to file inputs.
   select_all_button:
-    en: Select all
+    en: Seleccionar
     fr: Tout sélectionner
   deselect_all_button:
-    en: Deselect all
+    en: Deseleccionar
     fr: Vider la sélection
   mark_as_read_button:
-    en: Mark as read
+    en: Marcar como leído
     fr: Marquer comme lu
   archive_to_inbox_button:
-    en: Send to inbox
+    en: Enviar a Bandeja de Entrada
     fr: Restaurer
     context: Restoring from archived status.
   restore_button:
-    en: Restore
+    en: Restaurar
     fr: Restaurer
   upload_attachments_button:
-    en: Upload attachments
+    en: Subir archivos
     fr: Envoyer des pièces-jointes
   archives:
-    en: Archives
+    en: Archivo
     fr: Archives
     context: Can be used to reveal advanced options to expose archived resources
   click_here:
-    en: Click here
+    en: Click aquí
     fr: Cliquez ici
   see_more:
-    en: See more
+    en: Ver más
     fr: En voir plus
   verify:
-    en: Verify
+    en: Verificar
     fr: Vérifier
   validate:
-    en: Validate
+    en: Validar
     fr: Valider
   hide:
-    en: Hide
+    en: Ocultar
     fr: Masquer
   details:
-    en: Details
+    en: Detalles
     fr: Détail
   generic_add_button:
-    en: Add
+    en: Agregar
     fr: Ajouter
   create_button:
-    en: Create
+    en: Crear
     fr: Créer
     context: Used for any type of resource (contact, asset, content…)
   login_to_know_more:
-    en: Login to know more.
+    en: Accede para saber más.
     fr: Connectez-vous pour en savoir plus.
   drag_change_picture_order:
-    en: Drag to change picture order
+    en: Arrastra para cambiar la foto de lugar
     fr: Faites glisser les images pour changer leur ordre
   add_pictures:
-    en: Add pictures
+    en: Agregar fotos
     fr: Ajouter des images
   edit_pictures:
-    en: Edit pictures
+    en: Editar fotos
     fr: Modifier les images
   remove_pictures:
-    en: Remove pictures
+    en: Borrar fotos
     fr: Supprimer des images
   drag_and_drop_pictures:
-    en: Drag and drop your pictures
+    en: Arrastra tus fotos
     fr: Glissez-déposez vos images
   set_asset_availability:
-    en: Set availability
+    en: Definir disponibilidad
     fr: Définir les disponibilités
   my_availability:
-    en: My availability
+    en: Mi disponibilidad
     fr: Mes disponibilités
     context: General user’s availability, in contrast to single asset’s availability
   service_update:
     available:
-      en: "{SERVICE_NAME} Update"
+      en: "{SERVICE_NAME} Actualización"
       fr: "Mise à jour {SERVICE_NAME}"
       context: New version of the website / app is available.
     refresh_helper:
-      en: "{SERVICE_NAME} has just been updated, you can refresh your page to enjoy."
+      en: "{SERVICE_NAME} tiene una actualización, refresca la página para obtenerla."
       fr: "{SERVICE_NAME} vient d’être mis à jour. Rafraîchissez votre page pour en profiter."
       context: New version of the website / app is available.
     refresh_button:
-      en: Update
+      en: Actualizar
       fr: Mettre à jour
       context: User may lose current content in the process.
