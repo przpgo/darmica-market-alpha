@@ -67,7 +67,7 @@ export const searchAssets = async ({
   // Implicitly joining equality expression with AND.
   // Feel free to improve this to support more Stelace Search filter expressions
   forEach(customAttributesFilters, (value, name) => {
-    if (!isNil(value) && !isPlainObject(value)) addToFilter(`${name} == ${value}`)
+    if (!isNil(value) && !isPlainObject(value)) addToFilter(`${name} == "${value}"`)
   })
 
   if (filter) searchParams.filter = filter
