@@ -79,14 +79,17 @@ export async function searchAssets ({ state, rootState, rootGetters, commit, dis
 
       startDate: state.startDate,
       endDate: state.endDate,
-      assetTypeId: state.assetTypesIds && state.assetTypesIds.length ? [...new Set(state.assetTypesIds)] : null,
+      assetTypeId: state.assetTypesIds && state.assetTypesIds.length ? state.assetTypesIds : null,
 
       price: {
         gte: state.priceRange.min,
         lte: state.priceRange.max,
       }
     }),
-    customAttributesFilters: pick(searchFilters.customAttributesFilters, state.displayCustomAttributes)
+    customAttributesFilters: pick(
+      searchFilters.customAttributesFilters,
+      state.displayCustomAttributes
+    )
   })
 
   commit({

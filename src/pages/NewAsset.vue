@@ -143,12 +143,9 @@ export default {
       }
 
       const validCategory = this.selectedCategory && this.selectedCategory.name
-      if ((
-        !this.categoryRequired ||
-        validCategory) &&
-        (!isNaN(parseInt(this.price)) ||
-        (!this.selectedAssetType.name.includes('❤️') ||
-        !this.selectedAssetType.name.includes('♻️')))) {
+      if ((!this.categoryRequired ||
+          validCategory) &&
+          (!isNaN(parseInt(this.price)))) {
         steps[3] = true
       }
 
@@ -482,10 +479,52 @@ export default {
             </div>
           </div>
         </transition>
-
         <transition enter-active-class="animated fadeInUp">
           <div
             v-if="step > 2"
+            class="step-4 q-py-lg"
+          >
+            <div class="row justify-around">
+              <div
+                v-if="customAttributesByType['boolean']"
+                class="col-12 col-sm-6 col-md-5 q-pl-md"
+              >
+                <CustomAttributesEditor
+                  :definitions="customAttributesByType['boolean']"
+                  :values="editingCustomAttributes"
+                  @change="changeCustomAttributes"
+                />
+              </div>
+            </div>
+
+            <div class="row q-py-lg justify-around">
+              <CustomAttributesEditor
+                :definitions="customAttributesByType['select']"
+                :values="editingCustomAttributes"
+                class="col-12 col-sm-5"
+                @change="changeCustomAttributes"
+              />
+              <CustomAttributesEditor
+                :definitions="customAttributesOfTypes(['text', 'number'])"
+                :values="editingCustomAttributes"
+                class="col-12 col-sm-5"
+                @change="changeCustomAttributes"
+              />
+            </div>
+
+            <div v-if="customAttributesByType['tags']" class="row q-py-lg justify-around">
+              <CustomAttributesEditor
+                :definitions="customAttributesByType['tags']"
+                :values="editingCustomAttributes"
+                class="col-12 col-sm-10"
+                @change="changeCustomAttributes"
+              />
+            </div>
+          </div>
+        </transition>
+        <transition enter-active-class="animated fadeInUp">
+          <div
+            v-if="step > 3"
             class="step-3 q-py-lg"
           >
             <DateRangePicker
@@ -515,7 +554,6 @@ export default {
                 <AppInputNumber
                   v-model="quantity"
                   :label="$t({ id: 'asset.quantity_label' })"
-                  required
                   min="0"
                   :rules="[
                     quantity => quantity > 0 ||
@@ -525,68 +563,21 @@ export default {
                 />
               </div>
             </div>
-          </div>
-        </transition>
-
-        <transition enter-active-class="animated fadeInUp">
-          <div
-            v-if="step > 3"
-            class="step-4 q-py-lg"
-          >
-            <div class="row justify-around">
-              <div class="col-12 col-md-7">
-                <QInput
-                  v-model="description"
-                  class="q-mb-md"
-                  :label="$t({ id: 'asset.description_label' })"
-                  :maxlength="descriptionMaxLength"
-                  :counter="description.length > (descriptionMaxLength / 2)"
-                  :rules="[
-                    description => !!description ||
-                      $t({ id: 'form.error.missing_description' })
-                  ]"
-                  :input-style="customAttributesByType['boolean']
-                    ? `min-height: ${customAttributesByType['boolean'].length * 3}rem;` : ''"
-                  type="textarea"
-                  required
-                />
-              </div>
-              <div
-                v-if="customAttributesByType['boolean']"
-                class="col-12 col-sm-6 col-md-5 q-pl-md"
-              >
-                <CustomAttributesEditor
-                  :definitions="customAttributesByType['boolean']"
-                  :values="editingCustomAttributes"
-                  @change="changeCustomAttributes"
-                />
-              </div>
-            </div>
-
-            <div class="row q-py-lg justify-around">
-              <CustomAttributesEditor
-                :definitions="customAttributesOfTypes(['text', 'number'])"
-                :values="editingCustomAttributes"
-                class="col-12 col-sm-5"
-                @change="changeCustomAttributes"
-              />
-              <CustomAttributesEditor
-                :definitions="customAttributesByType['select']"
-                :values="editingCustomAttributes"
-                class="col-12 col-sm-5"
-                @change="changeCustomAttributes"
-              />
-            </div>
-
-            <div v-if="customAttributesByType['tags']" class="row q-py-lg justify-around">
-              <CustomAttributesEditor
-                :definitions="customAttributesByType['tags']"
-                :values="editingCustomAttributes"
-                class="col-12 col-sm-10"
-                @change="changeCustomAttributes"
-              />
-            </div>
-
+            <QInput
+              v-model="description"
+              class="q-mb-md"
+              :label="$t({ id: 'asset.description_label' })"
+              :maxlength="descriptionMaxLength"
+              :counter="description.length > (descriptionMaxLength / 2)"
+              :rules="[
+                description => !!description ||
+                  $t({ id: 'form.error.missing_description' })
+              ]"
+              :input-style="customAttributesByType['boolean']
+                ? `min-height: ${customAttributesByType['boolean'].length * 3}rem;` : ''"
+              type="textarea"
+              required
+            />
             <div class="step-asset-picture q-py-lg">
               <AppContent
                 class="text-h5"
