@@ -464,7 +464,7 @@ export default {
                   @change="selectCategory"
                 />
               </div>
-              <div v-if="donatingOrLending" :style="showCategory ? 'flex: 1 2 auto;' : ''">
+              <div v-if="false" :style="showCategory ? 'flex: 1 2 auto;' : ''">
                 <AppInputNumber
                   v-model="price"
                   :label="priceLabel"

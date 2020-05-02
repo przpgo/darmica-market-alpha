@@ -12,8 +12,8 @@
   "userFontMediumLegacy": "https://fonts.gstatic.com/s/firasans/v9/va9B4kDNxMZdWfMOD5VnZKveRhf8.woff",
   "userFontBoldLegacy": "https://fonts.gstatic.com/s/firasans/v9/va9B4kDNxMZdWfMOD5VnLK3eRhf8.woff",
 
-  "roundedTheme": false,
-  "colorfulTheme": false,
+  "roundedTheme": true,
+  "colorfulTheme": true,
   "pageTransitions": true,
 
   "homeHasLightBackground": true,

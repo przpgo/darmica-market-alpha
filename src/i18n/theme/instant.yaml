@@ -1,6 +1,26 @@
 instant:
   config:
     customAttributes:
+      membershipType_label:
+        en: Tipo de membresía
+
+      audience_label:
+        en: Audiencia
+      visibility_label:
+          en: Visibilidad del canal
+      allowedActions_label:
+          en:
+      ownerEntity_label:
+          en:
+      assetTypes_label:
+          en: Tipos de Activos a manejar, puedes elegir cualquiera
+      logoURL_label:
+          en:
+      tiktok: 
+          en: TikTok User
+      seat_label:
+          en: Número de Usuarios (Empleados + Clientes + Proveedores + etc) | 0 son ilimitados, solamente disponible para señales públicas
+          
       productState_label:
         en: ¿En que estado se encuentra?
         fr: Product State
