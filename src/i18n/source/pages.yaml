@@ -1,11 +1,11 @@
 pages:
   home:
     page_title:
-      en: "Bienvenido a {SERVICE_NAME}"
+      en: "{SERVICE_NAME} | Creando oportunidades para tod@s"
       fr: "Bienvenue sur {SERVICE_NAME}"
       context: Default website title
     page_title__EDITOR_LABEL:
-      en: Darmica 🌎 | Creando abundancia para tod@s
+      en: Darmica | Creando abundancia para tod@s
       fr: Titre de votre site
     page_title__EDITOR_HELPER:
       en: As shown in Web browser and search engine results such as Google.
@@ -15,7 +15,7 @@ pages:
       fr: "Rejoignez la communauté {SERVICE_NAME}"
       context: This is a very generic default that should be replaced by admin before platform is online.
     header:
-      en: "Bienvenido a {SERVICE_NAME}"
+      en: "{SERVICE_NAME} | Creando oportunidades para tod@s"
       fr: "Bienvenue sur {SERVICE_NAME}"
       context: Default home page header (H1)
     header__EDITOR_LABEL:

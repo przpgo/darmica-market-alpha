@@ -192,12 +192,10 @@ export default {
 <template>
   <q-page>
     <section
-      class="hero row items-center"
-      :style="`background-image: url('${style.homeHeroBase64}')`"
+      class="hero row items-center bg-linear"
     >
       <QImg
-        class="hero__background absolute-full"
-        :src="homeHeroUrlTransformed"
+        class="absolute-full"
         no-default-spinner
         basic
       />
@@ -381,6 +379,15 @@ export default {
   position relative
   background-size: cover
   background-position: 50% 50%
+
+.bg-linear
+  background rgba(56,255,255,1)
+  background -moz-linear-gradient(45deg, rgba(56,255,255,1) 0%, rgba(20,126,255,1) 51%, rgba(41,114,254,1) 56%, rgba(222,9,241,1) 100%)
+  background -webkit-gradient(left bottom, right top, color-stop(0%, rgba(56,255,255,1)), color-stop(51%, rgba(20,126,255,1)), color-stop(56%, rgba(41,114,254,1)), color-stop(100%, rgba(222,9,241,1)))
+  background -webkit-linear-gradient(45deg, rgba(56,255,255,1) 0%, rgba(20,126,255,1) 51%, rgba(41,114,254,1) 56%, rgba(222,9,241,1) 100%)
+  background -o-linear-gradient(45deg, rgba(56,255,255,1) 0%, rgba(20,126,255,1) 51%, rgba(41,114,254,1) 56%, rgba(222,9,241,1) 100%)
+  background -ms-linear-gradient(45deg, rgba(56,255,255,1) 0%, rgba(20,126,255,1) 51%, rgba(41,114,254,1) 56%, rgba(222,9,241,1) 100%)
+  background linear-gradient(45deg, rgba(56,255,255,1) 0%, rgba(20,126,255,1) 51%, rgba(41,114,254,1) 56%, rgba(222,9,241,1) 100%)
 
 @media (min-width $breakpoint-sm-min)
   .hero
